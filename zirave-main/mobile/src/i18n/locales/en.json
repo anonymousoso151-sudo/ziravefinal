@@ -1,0 +1,82 @@
+{
+  "auth": {
+    "welcome": "Welcome to ZİRAVE",
+    "subtitle": "Agricultural digital ecosystem",
+    "phoneNumber": "Phone Number",
+    "phoneNumberPlaceholder": "5XX XXX XX XX",
+    "sendOTP": "Send Verification Code",
+    "verificationCode": "Verification Code",
+    "verificationCodePlaceholder": "6-digit code",
+    "verify": "Verify",
+    "resendCode": "Resend Code",
+    "otpSent": "Verification code sent to {{phone}}",
+    "invalidPhone": "Please enter a valid phone number",
+    "invalidOTP": "Please enter a valid verification code",
+    "loginFailed": "Login failed",
+    "verificationFailed": "Verification failed"
+  },
+  "profile": {
+    "title": "Profile",
+    "fullName": "Full Name",
+    "role": "Role",
+    "roles": {
+      "FARMER": "Farmer",
+      "SUPPLIER": "Supplier",
+      "WORKER": "Worker",
+      "ENGINEER": "Engineer"
+    },
+    "save": "Save",
+    "logout": "Logout",
+    "editProfile": "Edit Profile"
+  },
+  "marketplace": {
+    "title": "Marketplace",
+    "search": "Search products...",
+    "categories": "Categories",
+    "allCategories": "All",
+    "myProducts": "My Products",
+    "addProduct": "Add Product",
+    "addFirstProduct": "Add the first product",
+    "productName": "Product Name",
+    "description": "Description",
+    "price": "Price",
+    "category": "Category",
+    "noProducts": "No products found",
+    "noSearchResults": "No search results found",
+    "contactSeller": "Contact Seller",
+    "freshProducts": "Fresh Products",
+    "organicProducts": "Organic Products",
+    "localFarmers": "Local Farmers"
+  },
+  "chat": {
+    "title": "Messages",
+    "conversations": "Conversations",
+    "typeMessage": "Type a message...",
+    "send": "Send",
+    "noConversations": "No conversations yet",
+    "startConversation": "Start conversation"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "back": "Back",
+    "next": "Next",
+    "done": "Done",
+    "retry": "Retry",
+    "unit": "kg",
+    "piece": "piece",
+    "liter": "liter"
+  },
+  "navigation": {
+    "marketplace": "Market",
+    "chat": "Messages",
+    "profile": "Profile",
+    "diagnostics": "Diagnostics"
+  }
+}

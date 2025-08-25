@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database with PostGIS
+  postgres:
+    image: postgis/postgis:15-3.3-alpine
+    container_name: zirave-postgres
+    environment:
+      POSTGRES_DB: zirave
+      POSTGRES_USER: zirave
+      POSTGRES_PASSWORD: zirave_dev_password
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./backend/prisma/init.sql:/docker-entrypoint-initdb.d/init.sql
+    networks:
+      - zirave-network
+
+  # Redis for Caching and Session Management
+  redis:
+    image: redis:7-alpine
+    container_name: zirave-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - zirave-network
+
+  # Development Database Admin (Optional)
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: zirave-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@zirave.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
+    networks:
+      - zirave-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  zirave-network:
+    driver: bridge

@@ -1,0 +1,39 @@
+{
+  "name": "zirave-platform-supabase",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ZİRAVE - Comprehensive Digital Agricultural Ecosystem (Supabase Edition)",
+  "keywords": [
+    "agriculture",
+    "farming",
+    "marketplace",
+    "ai",
+    "mobile",
+    "react-native",
+    "supabase"
+  ],
+  "scripts": {
+    "install:all": "npm install && cd mobile && npm install && cd ../web-dashboard && npm install && cd ../backend-custom && npm install",
+    "dev:all": "concurrently \"npm run dev:backend\" \"npm run dev:web\" \"npm run dev:mobile\"",
+    "dev:backend": "cd backend-custom && npm run start:dev",
+    "dev:web": "cd web-dashboard && npm run dev",
+    "dev:mobile": "cd mobile && npm start",
+    "build:all": "npm run build:backend && npm run build:web",
+    "build:backend": "cd backend-custom && npm run build",
+    "build:web": "cd web-dashboard && npm run build",
+    "supabase:start": "supabase start",
+    "supabase:stop": "supabase stop",
+    "supabase:reset": "supabase db reset",
+    "clean": "rm -rf node_modules mobile/node_modules web-dashboard/node_modules backend-custom/node_modules",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.2.0"
+  }
+}

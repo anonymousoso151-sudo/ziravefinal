@@ -1,0 +1,82 @@
+{
+  "auth": {
+    "welcome": "ZİRAVE'ye Hoş Geldiniz",
+    "subtitle": "Tarımsal dijital ekosistem",
+    "phoneNumber": "Telefon Numarası",
+    "phoneNumberPlaceholder": "5XX XXX XX XX",
+    "sendOTP": "Doğrulama Kodu Gönder",
+    "verificationCode": "Doğrulama Kodu",
+    "verificationCodePlaceholder": "6 haneli kod",
+    "verify": "Doğrula",
+    "resendCode": "Kodu Tekrar Gönder",
+    "otpSent": "Doğrulama kodu {{phone}} numarasına gönderildi",
+    "invalidPhone": "Geçerli bir telefon numarası giriniz",
+    "invalidOTP": "Geçerli bir doğrulama kodu giriniz",
+    "loginFailed": "Giriş başarısız",
+    "verificationFailed": "Doğrulama başarısız"
+  },
+  "profile": {
+    "title": "Profil",
+    "fullName": "Ad Soyad",
+    "role": "Rol",
+    "roles": {
+      "FARMER": "Çiftçi",
+      "SUPPLIER": "Tedarikçi",
+      "WORKER": "İşçi",
+      "ENGINEER": "Mühendis"
+    },
+    "save": "Kaydet",
+    "logout": "Çıkış Yap",
+    "editProfile": "Profili Düzenle"
+  },
+  "marketplace": {
+    "title": "Pazar Yeri",
+    "search": "Ürün ara...",
+    "categories": "Kategoriler",
+    "allCategories": "Tümü",
+    "myProducts": "Ürünlerim",
+    "addProduct": "Ürün Ekle",
+    "addFirstProduct": "İlk ürünü ekleyin",
+    "productName": "Ürün Adı",
+    "description": "Açıklama",
+    "price": "Fiyat",
+    "category": "Kategori",
+    "noProducts": "Henüz ürün bulunmuyor",
+    "noSearchResults": "Arama sonucu bulunamadı",
+    "contactSeller": "Satıcıyla İletişime Geç",
+    "freshProducts": "Taze Ürünler",
+    "organicProducts": "Organik Ürünler",
+    "localFarmers": "Yerel Çiftçiler"
+  },
+  "chat": {
+    "title": "Mesajlar",
+    "conversations": "Konuşmalar",
+    "typeMessage": "Mesaj yazın...",
+    "send": "Gönder",
+    "noConversations": "Henüz konuşma bulunmuyor",
+    "startConversation": "Konuşma başlat"
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata",
+    "success": "Başarılı",
+    "cancel": "İptal",
+    "confirm": "Onayla",
+    "save": "Kaydet",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "back": "Geri",
+    "next": "İleri",
+    "done": "Tamam",
+    "retry": "Tekrar Dene",
+    "unit": "kg",
+    "piece": "adet",
+    "liter": "litre"
+  },
+  "navigation": {
+    "marketplace": "Pazar",
+    "chat": "Mesajlar",
+    "profile": "Profil",
+    "diagnostics": "Teşhis"
+  }
+}
