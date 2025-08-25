@@ -1,0 +1,51 @@
+name: Move Files to Root
+
+on:
+  # يسمح بتشغيل هذه الـ Action يدويًا فقط عند الحاجة
+  workflow_dispatch:
+
+jobs:
+  move-and-cleanup:
+    runs-on: ubuntu-latest
+    
+    # هذه هي الصلاحيات التي أصلحناها في المرة السابقة، من الجيد إضافتها هنا
+    # لضمان أن الـ Action لديها إذن بالكتابة
+    permissions:
+      contents: write
+
+    steps:
+      # الخطوة 1: سحب نسخة من المستودع (مع مجلد zirave-main)
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # الخطوة 2: نقل كل شيء من المجلد الفرعي إلى الجذر
+      - name: Move contents from subfolder to root
+        run: |
+          # تحقق أولاً من وجود المجلد لتجنب الأخطاء
+          if [ -d "zirave-main" ]; then
+            # انقل كل الملفات والمجلدات (بما في ذلك المخفية مثل .gitignore)
+            # من مجلد zirave-main إلى المجلد الحالي (الجذر)
+            mv zirave-main/.* zirave-main/* .
+            echo "All files and folders moved to the root directory."
+          else
+            echo "Subfolder 'zirave-main' not found. Nothing to move."
+          fi
+
+      # الخطوة 3: حذف المجلد الفارغ المتبقي
+      - name: Remove the now-empty subfolder
+        run: |
+          # تحقق مرة أخرى قبل الحذف
+          if [ -d "zirave-main" ]; then
+            rmdir zirave-main
+            echo "Empty 'zirave-main' folder has been removed."
+          fi
+
+      # الخطوة 4: حفظ التغييرات في المستودع
+      - name: Commit and push the changes
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "action@github.com"
+          git add .
+          # نستخدم هذا السطر لتجنب الخطأ إذا لم تكن هناك تغييرات
+          git commit -m "Organize files: Move contents from zirave-main to root" || echo "No changes to commit"
+          git push
