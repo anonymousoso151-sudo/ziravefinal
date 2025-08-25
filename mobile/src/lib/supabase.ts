@@ -7,17 +7,19 @@ const supabaseUrl = process.env.EXPO_PUBLIC_SUPABASE_URL;
 const supabaseAnonKey = process.env.EXPO_PUBLIC_SUPABASE_ANON_KEY;
 
 if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error("Supabase URL or Anon Key is missing from environment variables.");
+  console.warn("Supabase URL or Anon Key is missing from environment variables. Using fallback values for development.");
 }
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey, {
+export const supabase = createClient(
+  supabaseUrl || 'http://127.0.0.1:54321', 
+  supabaseAnonKey || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5YmpqenBpYmVjb3FkcWJ1bXpuIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTU5NTg0OTUsImV4cCI6MjA3MTUzNDQ5NX0.-5pbjXP5nJtyeWNvONPOXfFz8LNoc0spPE4Sjaem4OA', 
+  {
   auth: {
     storage: AsyncStorage,
     autoRefreshToken: true,
     persistSession: true,
     detectSessionInUrl: false,
   },
-});
 
 // Database Types (will be generated from Supabase later)
 export interface Profile {
